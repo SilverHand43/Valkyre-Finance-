@@ -1,0 +1,247 @@
+/* Variaveis */
+:root {
+  --vf-color-primary: #3b82f6;
+  --vf-color-bg: #0a0a0f;
+  --vf-color-surface: #13131a;
+  --vf-color-input: #1e1e2e;
+  --vf-color-border: #27273a;
+  --vf-color-muted: #9ca3af;
+  --vf-color-success: #10b981;
+  --vf-color-danger: #ef4444;
+  --vf-color-warning: #f59e0b;
+
+  --vf-space-1: 0.25rem;
+  --vf-space-2: 0.5rem;
+  --vf-space-3: 0.75rem;
+  --vf-space-4: 1rem;
+  --vf-space-5: 1.25rem;
+  --vf-space-6: 1.5rem;
+  --vf-space-8: 2rem;
+
+  --vf-radius-sm: 0.5rem;
+  --vf-radius-md: 0.75rem;
+  --vf-shadow-elevated: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+/* Layout */
+@layer components {
+  .vf-auth-screen {
+    @apply min-h-screen bg-background flex items-center justify-center p-4;
+  }
+
+  .vf-auth-shell {
+    @apply w-full max-w-md;
+  }
+
+  .vf-auth-shell-wide {
+    @apply max-w-2xl;
+  }
+
+  .vf-auth-header {
+    @apply text-center mb-8;
+  }
+
+  .vf-auth-logo-wrap {
+    @apply flex items-center justify-center mb-4;
+  }
+
+  .vf-auth-logo {
+    @apply w-12 h-12 text-[var(--electric-blue)];
+  }
+
+  .vf-auth-title {
+    @apply text-3xl mb-2;
+  }
+
+  .vf-auth-subtitle {
+    @apply text-muted-foreground;
+  }
+
+  .vf-auth-brand-tagline {
+    @apply text-sm text-[var(--gold)] mt-1;
+  }
+
+  .vf-auth-panel {
+    @apply bg-card border border-border rounded-lg p-8;
+    box-shadow: var(--vf-shadow-elevated);
+  }
+
+  .vf-auth-footer {
+    @apply text-center text-xs text-muted-foreground mt-8;
+  }
+
+  .vf-auth-back-button {
+    @apply flex items-center gap-2 text-muted-foreground hover:text-foreground mb-6;
+  }
+
+  .vf-page-shell {
+    @apply p-8;
+  }
+
+  .vf-page-header {
+    @apply mb-8;
+  }
+
+  .vf-page-title {
+    @apply text-3xl mb-2;
+  }
+
+  .vf-page-subtitle {
+    @apply text-muted-foreground;
+  }
+
+  .vf-surface-card {
+    @apply bg-card border border-border rounded-lg p-6;
+  }
+}
+
+/* Componentes */
+@layer components {
+  .vf-metric-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8;
+  }
+
+  .vf-metric-card {
+    @apply min-h-[156px];
+  }
+
+  .vf-metric-card-header {
+    @apply flex items-center justify-between mb-4;
+  }
+
+  .vf-metric-icon {
+    @apply w-12 h-12 rounded-lg flex items-center justify-center;
+  }
+
+  .vf-metric-icon-tone-default {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .vf-metric-icon-tone-success {
+    @apply bg-green-500/10 text-green-500;
+  }
+
+  .vf-metric-icon-tone-danger {
+    @apply bg-red-500/10 text-red-500;
+  }
+
+  .vf-metric-icon-tone-warning {
+    @apply bg-[var(--gold)]/10 text-[var(--gold)];
+  }
+
+  .vf-metric-icon-tone-info {
+    @apply bg-blue-500/10 text-blue-500;
+  }
+
+  .vf-metric-icon-tone-violet {
+    @apply bg-purple-500/10 text-purple-500;
+  }
+
+  .vf-trend-chip {
+    @apply text-xs px-2 py-1 rounded;
+  }
+
+  .vf-trend-chip-positive {
+    @apply bg-green-500/10 text-green-500;
+  }
+
+  .vf-trend-chip-negative {
+    @apply bg-red-500/10 text-red-500;
+  }
+
+  .vf-metric-value {
+    @apply text-2xl mb-1;
+  }
+
+  .vf-metric-label {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .vf-chart-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8;
+  }
+
+  .vf-widget-grid {
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-6;
+  }
+}
+
+/* Formularios */
+@layer components {
+  .vf-auth-form {
+    @apply space-y-6;
+  }
+
+  .vf-auth-form-dense {
+    @apply space-y-5;
+  }
+
+  .vf-form-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-5;
+  }
+
+  .vf-form-field {
+    @apply min-w-0;
+  }
+
+  .vf-form-field-full {
+    @apply md:col-span-2;
+  }
+
+  .vf-form-label {
+    @apply block mb-2 text-sm;
+  }
+
+  .vf-input,
+  .vf-select {
+    @apply w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .vf-primary-button {
+    @apply w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg transition-colors;
+  }
+
+  .vf-auth-actions {
+    @apply flex items-center justify-between text-sm;
+  }
+
+  .vf-link-primary {
+    @apply text-primary hover:underline;
+  }
+
+  .vf-link-muted {
+    @apply text-muted-foreground hover:text-foreground;
+  }
+}
+
+/* Dashboard */
+@layer components {
+  .vf-dashboard-growth {
+    @apply grid grid-cols-1 gap-6 mb-8;
+  }
+
+  .vf-list-stack {
+    @apply space-y-3;
+  }
+
+  .vf-progress-track {
+    @apply w-full bg-muted rounded-full;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .vf-page-shell {
+    padding: var(--vf-space-6);
+  }
+}
+
+@media (max-width: 640px) {
+  .vf-page-shell {
+    padding: var(--vf-space-4);
+  }
+
+  .vf-auth-panel {
+    @apply p-6;
+  }
+}
