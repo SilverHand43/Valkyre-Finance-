@@ -1,6 +1,7 @@
 import {
 	Body,
 	Controller,
+	Get,
 	HttpCode,
 	HttpStatus,
 	Ip,
@@ -22,6 +23,12 @@ import { RequestUser } from '../common/interfaces/request-user.interface';
 @Controller('auth')
 export class AuthController {
 	constructor(private readonly authService: AuthService) {}
+
+	@Public()
+	@Get('has-users')
+	hasUsers() {
+		return this.authService.hasRegisteredUsers();
+	}
 
 	@Public()
 	@Post('register')

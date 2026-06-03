@@ -27,6 +27,14 @@ export class AuthService {
 		private readonly auditLogService: AuditLogService,
 	) {}
 
+	async hasRegisteredUsers() {
+		const totalUsers = await this.usersService.countUsers();
+		return {
+			hasUsers: totalUsers > 0,
+			totalUsers,
+		};
+	}
+
 	async register(dto: RegisterDto) {
 		const existing = await this.usersService.findByEmail(dto.email);
 		if (existing) {

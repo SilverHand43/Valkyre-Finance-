@@ -45,4 +45,8 @@ export class UsersService {
 			data,
 		});
 	}
+
+	countUsers(): Promise<number> {
+		return this.prisma.user.count();
+	}
 }
